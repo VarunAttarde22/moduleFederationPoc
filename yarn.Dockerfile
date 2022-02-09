@@ -15,6 +15,6 @@ COPY . .
 
 RUN yarn single:build
 
-FROM nginx:1.19-alpine
+FROM asdrepo.isus.emc.com:9042/atlantic/nginxbase:objs-1.0
 COPY --from=builder /home/app/build /usr/share/nginx/html
 COPY nginx.default.conf /etc/nginx/conf.d/default.conf
